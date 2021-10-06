@@ -1,0 +1,86 @@
+---
+# defaults file for endevel-server
+user: administrator
+
+packages:
+  - python-setuptools
+  - python-virtualenv
+  - python3
+  - python-dev
+  - python3-dev
+  - build-essential
+  - python3-pip
+  - gettext
+  - libfontconfig
+  - wkhtmltopdf
+
+postgresql_hba_entries:
+  - { type: local, database: all, user: postgres, auth_method: peer }
+  - { type: local, database: all, user: all, auth_method: peer }
+  - { type: host, database: all, user: all, address: '127.0.0.1/32', auth_method: md5 }
+  - { type: host, database: all, user: all, address: '::1/128', auth_method: md5 }
+
+postgresql_locales:
+  - 'cs_CZ.UTF-8'
+  - 'en_US.UTF-8'
+
+postgresql_users:
+  - name: "{{ db_superuser }}"
+    password: "{{ vault_database_password }}"
+    role_attr_flags: SUPERUSER
+
+db_superuser: "{{ user }}"  # DB superuser must be same as user to backup.sh working correctly
+
+
+# supervisor_user: administrator
+# supervisor_log_dir: /tmp/supervisor.log
+supervisor_unix_http_server_enable: false
+supervisor_unix_http_server_password_protect: false
+supervisor_inet_http_server_enable: True
+supervisor_inet_http_server_port: 8080
+supervisor_inet_http_server_password_protect: false
+
+sudo_users:
+  - name: "{{ user }}"
+    nopasswd: yes
+
+sudo_defaults:
+  - defaults: env_keep += "SSH_AUTH_SOCK"
+
+backup_db_root: /mnt/backup/db
+backup_web_root: /mnt/backup/web
+
+dhparam_path: '/etc/nginx/'
+dhparam_name: 'dh4096.pem'
+dhparam_length: 4096
+
+exim4_sendonly_email_addresses:
+  root: 'noreply@endevel.cz'
+
+sshd:
+  AllowAgentForwarding: yes
+  PermitRootLogin: without-password
+  PasswordAuthentication: no
+
+ssh_users:
+  - "{{ lookup('file', 'files/lubos.pub')}}"
+  - "{{ lookup('file', 'files/ondra.pub')}}"
+  - "{{ lookup('file', 'files/lukas.pub')}}"
+  - "{{ lookup('file', 'files/honza.pub')}}"
+  - "{{ lookup('file', 'files/radek.pub')}}"
+
+ufw_rules: [{ port: 22, rule: allow }, { port: 80, rule: allow }, { port: 443, rule: allow }]
+
+nginx_conf_template: "{{ playbook_dir }}/templates/nginx.conf.j2"
+
+fail2ban_sendername: 'noreply@endevel.cz'
+fail2ban_ignoreips:
+  - 90.177.99.144
+  - 127.0.0.1/8
+fail2ban_maxretry: 5
+fail2ban_destemail: support@endevel.cz
+fail2ban_mta: exim4
+
+python_compile: false
+
+cron_email: support@endevel.cz

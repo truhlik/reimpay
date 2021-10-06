@@ -1,0 +1,3 @@
+0{%month_2}{%year_2} 01{%client_number_6}2010   000000{%cislo_uctu_10%}{%var_symbol_10%}0000{%spec_symbol_10}{%castka_halere_12}{%cena_halere_12}{%pocet_vet_5} {%platnost_rrrrmmdd_8}          0000000000000000000000000{%volne_139}
+1{%_count_5}               {%name_40_l}{%street_40_l}{%cp_8_l}{%cast_obce_40_l}{%obec_40_l}{%zip_5}{%zprava_60_l}1        {%castka_halere_10}
+100002               Petra Lubor                             16.listopadu                            222/22  MØln¡k                                  MØln¡k 1                                27601                                                            0        0000425300

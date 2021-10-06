@@ -1,0 +1,65 @@
+bank_dict = {
+            "0100": "Komerční banka, a.s.",
+            "0300": "Československá obchodní banka, a.s.",
+            "0600": "MONETA Money Bank, a.s.",
+            "0710": "Česká národní banka",
+            "0800": "Česká spořitelna, a.s.",
+            "2010": "Fio banka, a.s.",
+            "2020": "MUFG Bank (Europe) N.V. Prague Branch",
+            "2030": "Československé úvěrní družstvo",
+            "2060": "Citfin, spořitelní družstvo",
+            "2070": "Moravský Peněžní Ústav – spořitelní družstvo",
+            "2100": "Hypoteční banka, a.s.",
+            "2200": "Peněžní dům, spořitelní družstvo",
+            "2220": "Artesa, spořitelní družstvo",
+            "2240": "Poštová banka, a.s., pobočka Česká republika",
+            "2250": "Banka CREDITAS a.s.",
+            "2260": "ANO spořitelní družstvo",
+            "2275": "Podnikatelská družstevní záložna",
+            "2310": "Raiffeisenbank a.s.-doběh plateb ZUNO",
+            "2600": "Citibank Europe plc, organizační složka",
+            "2700": "UniCredit Bank Czech Republic and Slovakia, a.s.",
+            "3030": "Air Bank a.s.",
+            "3050": "BNP Paribas Personal Finance SA, odštěpný závod",
+            "3060": "PKO BP S.A., Czech Branch",
+            "3500": "ING Bank N.V.",
+            "4000": "Expobank CZ a.s.",
+            "4300": "Českomoravská záruční a rozvojová banka, a.s.",
+            "5500": "Raiffeisenbank a.s.",
+            "5800": "J & T BANKA, a.s.",
+            "6000": "PPF banka a.s.",
+            "6100": "Equa bank a.s.",
+            "6200": "COMMERZBANK Aktiengesellschaft, pobočka Praha",
+            "6210": "mBank S.A., organizační složka",
+            "6300": "BNP Paribas Fortis SA/NV, pobočka Česká republika",
+            "6700": "Všeobecná úverová banka a.s., pobočka Praha",
+            "6800": "Sberbank CZ, a.s.",
+            "7910": "Deutsche Bank Aktiengesellschaft Filiale Prag, organizační složka",
+            "7940": "Waldviertler Sparkasse Bank AG",
+            "7950": "Raiffeisen stavební spořitelna a.s.",
+            "7960": "Českomoravská stavební spořitelna, a.s.",
+            "7970": "Wüstenrot-stavební spořitelna a.s.",
+            "7980": "Wüstenrot hypoteční banka a.s.",
+            "7990": "Modrá pyramida stavební spořitelna, a.s.",
+            "8030": "Raiffeisenbank im Stiftland eG pobočka Cheb, odštěpný závod",
+            "8040": "Oberbank AG pobočka Česká republika",
+            "8060": "Stavební spořitelna České spořitelny, a.s.",
+            "8090": "Česká exportní banka, a.s.",
+            "8150": "HSBC Bank plc - pobočka Praha",
+            "8200": "PRIVAT BANK AG der Raiffeisenlandesbank Oberösterreich Aktiengesellschaft, pobočka Česká republika",
+            "8220": "Payment Execution s.r.o.",
+            "8230": "EEPAYS s.r.o.",
+            "8240": "Družstevní záložna Kredit",
+            "8250": "Bank of China (Hungary) Close Ltd. Prague branch, odštěpný závod",
+            "8265": "Industrial and Commercial Bank of China Limited Prague Branch, odštěpný závod",
+}
+
+
+def validate_bank_number(number: str):
+    # Kontrola formátu.
+    import re
+    groups = re.match("^(([0-9]{0,6})-)?([0-9]{2,10})/([0-9]{4})$")
+    if not groups:
+        return False
+    return True
+    # https://jan.malcak.cz/blog/php-validace-bankovniho-cisla

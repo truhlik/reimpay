@@ -1,0 +1,87 @@
+body .toasted-container.top-center {
+  top: 0;
+}
+
+body .toasted.toasted-primary {
+  font-family: 'Roboto', sans-serif;
+
+  &.success {
+    background: $green;
+  }
+  &.error {
+    background: $red;
+  }
+}
+
+.color-brand {
+  color: $brand;
+}
+
+.color-secondary {
+  color: $secondary !important;
+}
+
+.color-red {
+  color: $danger !important;
+}
+
+.color-yellow {
+  color: $warning !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
+.required {
+  font-weight: 700;
+}
+
+.background-primary {
+  background: $primary;
+}
+
+.hover-color-primary:hover {
+  color: $primary !important;
+}
+
+th.sortable .v-data-table-header__icon {
+  position: absolute;
+}
+
+// Materialize framework overrides
+//.v-text-field__slot, .v-select__slot {
+  // "borders for inputs"
+  //box-shadow: 1px 1px 2px gray;
+  //box-shadow: 1px 1px 4px -1px gray;
+  //box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+  //label {
+    //margin-left: 0.25rem;
+
+    //&.v-label--active {
+      //margin-left: 0;
+      //top: 2px;
+    //}
+  //}
+//}
+//}
+
+@media (min-width: 1904px) {
+  .container {
+    max-width: 1185px;
+  }
+}
+@media (min-width: 1921px) {
+  .container {
+    max-width: 1785px;
+  }
+}

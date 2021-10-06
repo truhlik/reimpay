@@ -1,0 +1,29 @@
+### SERVER VARIABLES ###
+server_hostname: www.reimpay.com
+
+### PROJECT VARIABLES ###
+git_branch: master
+settings_file: production
+project_domain: www.reimpay.com
+project_other_domains_list: ["reimpay.com"]
+
+redirect_http: true
+allow_robots: false
+default_notification_email: info@reimpay.com
+
+python_version: python3
+python_path: python3.7
+lc_collate: C.UTF-8
+lc_ctype: C.UTF-8
+db_superuser: ubuntu
+user: ubuntu
+pip_executable: pip3.6
+
+email_host: smtp.zoho.eu
+email_port: 587
+email_password: "{{ vault_email_password }}"
+email_user: info@reimpay.com
+email_use_tls: true
+email_default_from: info@reimpay.com
+
+wkhtml_cmd: "/usr/bin/xvfb-run /usr/bin/wkhtmltopdf"

@@ -1,0 +1,68 @@
+//@import '~vuetify/src/styles/tools/_functions.sass';
+//@import '~vuetify/src/styles/styles.sass';
+//
+//$grid-breakpoints: map-deep-merge(
+//$grid-breakpoints,
+//(
+//'xs': 0,
+//'sm': 320px,
+//'md': 425px,
+//'lg': 768px,
+//'xl': 1024px - 16px
+//)
+//);
+//
+//@import '~vuetify/src/styles/settings/_variables';
+
+// You need to map-merge your new SASS variables
+//$grid-breakpoints: (
+//  xs: 0,
+//  sm: 476px,
+//  md: 668px,
+//  lg: 1280px,
+//  xl: 1950px
+//);
+////
+//@import '~vuetify/src/styles/styles.sass';
+
+// HEXy od Marka
+//.color-primary-0 { color: #36A693 }	/* Main Primary color */
+//.color-primary-1 { color: #8BDCCE }
+//.color-primary-2 { color: #59C0AF }
+//.color-primary-3 { color: #1C9883 }
+//.color-primary-4 { color: #0A7C69 }
+
+// FIXME
+
+//$brand: #36A693;
+//$brand-light: #8BDCCE;
+//$brand-dark: #0A7C69;
+//$blue: #002B5C;
+//$indigo: #444054;
+//$purple: #794c8a;
+//$pink: #f65ca2;
+//$red: #e55b64;
+//$orange: #fd7e14;
+//$yellow: #ffc519;
+//$green: #06d6a0;
+//$teal: #16E0BD;
+//$cyan: #44bae5;
+//$blue-light: #eeeeee;
+//$white: #ffffff;
+//@import '~vuetify/src/styles/styles.sass';
+
+//$grid-breakpoints: map-merge($grid-breakpoints, (
+//  xs: 0,
+//  sm: 476px,
+//  md: 668px,
+//  lg: 1000px,
+//  xl: 1300px
+//))
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

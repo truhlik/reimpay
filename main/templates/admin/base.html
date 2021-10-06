@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+
+{% block usertools %}
+    <div style="float: right;">
+        <form action="{% url 'admin-run-cron' %}" method="post">
+            {% csrf_token %}
+        <input type="submit" class="btn btn-group-sm btn-default" value="Spustit crony">
+        </form>
+    </div>
+    {{ block.super }}
+{% endblock %}

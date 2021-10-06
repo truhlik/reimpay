@@ -1,0 +1,8 @@
+{% extends "emails/base_email_txt.html" %}
+{% load i18n %}
+{% block content %}Hello,\n\n
+
+Your account in ReimPay system for study subjects reimbursement management was created. To confirm your email address and set your password, please click on following button.\n
+{% block reset_link %}{{ admin_url }}{{ frontend_reset_password_url }}?uid={{ uid }}&token={{ token }}{% endblock %}\n\n
+If you didn't request to create ReimPay account, please ignore this email.\n\n
+{% endblock %}

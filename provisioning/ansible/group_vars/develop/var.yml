@@ -1,0 +1,12 @@
+### SERVER VARIABLES ###
+server_hostname: hosting2.endevel.cz
+
+### PROJECT VARIABLES ###
+git_branch: develop
+settings_file: develop
+project_domain: reimpay.endevel.cz
+
+redirect_http: false
+allow_robots: false
+default_notification_email: info@endevel.cz
+wkhtml_cmd: "/usr/bin/xvfb-run /usr/bin/wkhtmltopdf"

@@ -1,0 +1,11 @@
+- role: geerlingguy.redis
+  version: 1.6.0
+- src: git+git@gitlab.com:endevel/internal/ansible/ansible-endevel-server.git
+  name: basesever
+  version: 0.1.3
+- src: git+git@gitlab.com:endevel/internal/ansible/ansible-base-django.git
+  name: django
+  version: 0.1.6
+- src: git+git@gitlab.com:endevel/internal/ansible/ansible-base-django-ssl.git
+  name: django_ssl
+  version: 0.1.8

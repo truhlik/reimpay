@@ -1,0 +1,2 @@
+class FakturoidException(Exception):
+    pass

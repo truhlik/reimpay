@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ReimPay.com</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="ReimPay - Reimbursement payments easy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="icon" href="/images/favicon.png" sizes="16x16" type="image/png">
+</head>
+
+<body>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175551193-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());gtag('config', 'UA-175551193-1');
+</script>
+
+<div class="super_container">
+
+    <!-- Menu -->
+
+    <div class="menu trans_500">
+        <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="menu_close_container">
+                <div class="menu_close"></div>
+            </div>
+            <ul>
+                <li class="menu_item"><a href="/app">System entry</a></li>
+                <li class="menu_item"><a href="/">Product</a></li>
+                <li class="menu_item"><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <!--	<div class="menu_social">
+        <ul>
+            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>-->
+    </div>
+
+    <!-- Home -->
+
+    <div class="home">
+        <div class="background_image" style="background-image:url(images/index_hero.jpg)"></div>
+
+        <!-- Header -->
+
+        <header class="header" id="header">
+            <div>
+                <div class="header_top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="header_top_content d-flex flex-row align-items-center d-flex justify-content-between">
+                                    <div class="logo">
+                                        <a href="#"><img src="images/reimpay_logo.png" alt="logo reimpay_logo"></a>
+                                    </div>
+                                    <div class="header_top_extra header_top_nav">
+                                        <ul class="d-flex flex-row align-items-center justify-content-start">
+                                            <li><a href="/app">System entry</a></li>
+                                            <li><a href="#contact">Contact</a></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="header_nav" id="header_nav_pin">
+                    <div class="header_nav_inner">
+                        <div class="header_nav_container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+                                            <nav class="main_nav">
+                                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                    <li><a href="#contact">Contact</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </header>
+
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="home_title"><span>Reim</span>bursement <span style="display:inline; color: black;">pay</span>ments easy</div>
+                            <div class="home_text">Fully automated payments of all patient reimbursements in Clinical trials. One-off study setup, simple patient visit approval, live reports and more. Ask us for demo!
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 info_box_col">
+                                    <div class="info_form_container">
+                                        <div class="info_form_title">Reimbursement approval
+                                        </div>
+                                        <form action="/api/v1/doctor/login/" method="POST" class="info_form" id="loginForm">
+                                            <input type="text" name="patient_number" class="info_input" placeholder="Patient#" required>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <input type="password" name="site_pin" class="info_input" placeholder="PIN" required>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="info_form_button">Approve</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Services -->
+
+    <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_title">Our Benefits</div>
+                    <div class="section_subtitle">OUR SYSTEM MAKES LIFE EASIER FOR ALL (PATIENTS, CRO, SPONSOR, PRINCIPAL INVESTIGATORS, STUDY STUFF)
+                    </div>
+                </div>
+            </div>
+            <div class="row icon_boxes_row">
+
+                <!-- Icon Box -->
+                <div class="col-xl-4 col-lg-6">
+                    <div class="icon_box">
+                        <div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+                            <div class="icon_box_icon"><img src="images/cloud.svg" alt=""></div>
+                            <div class="icon_box_title">Simplification of work</div>
+                        </div>
+                        <div class="icon_box_text">Easy and safe payment transfers from Sponsors or CROs to patients. No further Reims billing needed between Sponsors/CROs and study sites.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Box -->
+                <div class="col-xl-4 col-lg-6">
+                    <div class="icon_box">
+                        <div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+                            <div class="icon_box_icon"><img src="images/light.svg" alt=""></div>
+                            <div class="icon_box_title">Faster Reims to patients</div>
+                        </div>
+                        <div class="icon_box_text">No more delays due to lack of time. All you have to do is approve patient’s visit in two simple steps and we will take care of the rest. </div>
+                    </div>
+                </div>
+
+                <!-- Icon Box -->
+                <div class="col-xl-4 col-lg-6">
+                    <div class="icon_box">
+                        <div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+                            <div class="icon_box_icon"><img src="images/mouse.svg" alt=""></div>
+                            <div class="icon_box_title">No more cash work for study site personnel
+                            </div>
+                        </div>
+                        <div class="icon_box_text">Concentrate fully on your role in clinical trial and leave the tedious administrative process of patient reimbursements on us.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Box -->
+                <div class="col-xl-4 col-lg-6">
+                    <div class="icon_box">
+                        <div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+                            <div class="icon_box_icon"><img src="images/group.svg" alt=""></div>
+                            <div class="icon_box_title">Multiple payments methods</div>
+                        </div>
+                        <div class="icon_box_text">Bank transfer, postal order, or any other? Let your patients choose the payment method that suits them the best.</div>
+                    </div>
+                </div>
+
+                <!-- Icon Box -->
+                <div class="col-xl-4 col-lg-6">
+                    <div class="icon_box">
+                        <div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+                            <div class="icon_box_icon"><img src="images/report.svg" alt=""></div>
+                            <div class="icon_box_title">Transparency and reports</div>
+                        </div>
+                        <div class="icon_box_text">Need to keep track of Reims? Download live report in one click and have overview of all necessary data while maintaining confidentiality.</div>
+                    </div>
+                </div>
+
+                <!-- Icon Box -->
+                <div class="col-xl-4 col-lg-6">
+                    <div class="icon_box">
+                        <div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+                            <div class="icon_box_icon"><img src="images/umbrela.svg" alt=""></div>
+                            <div class="icon_box_title">Full data protection</div>
+                        </div>
+                        <div class="icon_box_text">Best data protection is to have no data. That’s why we collect absolute minimum of it. We don’t use, resell, or process data in any other way than Reims processing.</div>
+                    </div>
+                </div>
+
+            </div>
+            <!--<div class="row">
+        <div class="col">
+            <div class="button services_button ml-auto mr-auto"><a href="#"><span>read more</span><span>read more</span></a></div>
+        </div>
+    </div>-->
+        </div>
+    </div>
+
+    <!-- FAQ & News -->
+
+    <div class="stuff">
+        <div class="container">
+            <div class="row">
+
+                <!-- FAQ -->
+                <div class="col-lg-12">
+                    <div class="faq">
+                        <div class="faq_title">Question you should ask us</div>
+                        <div class="faq_subtitle">read all about it</div>
+                        <div class="elements_accordions">
+                            <div class="accordions">
+
+                                <div class="accordion_container">
+                                    <div class="accordion d-flex flex-row align-items-center active">
+                                        <div>Do you have SUKL approval?</div>
+                                    </div>
+                                    <div class="accordion_panel">
+                                        <div>
+                                            <p>Yes, all the paperwork has been reviewed and accepted by commision.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion_container">
+                                    <div class="accordion d-flex flex-row align-items-center">
+                                        <div>How the pricing looks like?</div>
+                                    </div>
+                                    <div class="accordion_panel">
+                                        <div>
+                                            <p>In general there is monthly fee and pecentage of Reim processed. Ask us more on appointment.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion_container">
+                                    <div class="accordion d-flex flex-row align-items-center">
+                                        <div>More questions?</div>
+                                    </div>
+                                    <div class="accordion_panel">
+                                        <div>
+                                            <p>Contact us!  <a href="#contact">Contact</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+
+    <div class="contact">
+        <a name="contact"></a>
+        <div class="container">
+            <div class="row">
+
+                <!-- Contact form -->
+                <div class="col-lg-8 contact_col">
+                    <div class="contact_form">
+                        <div class="contact_title">Get in touch</div>
+                        <div class="contact_info_list contact_info_list_2">
+                            <ul>
+                                <li><span>Reimpay, s.r.o.</span></li>
+                                <li><span></span>Pod Harfou 994/21 </li>
+
+                                <li><span></span>Vysočany (Praha 9) </li>
+                                <li><span></span>190 00 Praha</li>
+                                <li><span>IČO:</span> 08956189</li>
+                                <li><span></span>+420 604 294 304</li>
+                                <li><span></span>info (at) reimpay.com</li>
+                                <li><span>Banking connection: </span>2901781405 / 2010 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Make an Appointment -->
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="footer_bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_bar_content d-flex flex-sm-row flex-column align-items-lg-center align-items-start justify-content-start">
+                            <div class="footer_links">
+                                <ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                                    <li><a href="#contact">Contact</a></li>
+                                    <li><a href="/app">System entry</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
+<div id="errorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: #37A794">Invalid Data</h4>
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="errorText"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="info_form_button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+
+</html>

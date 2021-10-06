@@ -1,0 +1,137 @@
+{% extends "email/email_base.html" %}
+{% load i18n l10n fiobanka_filters common_tags %}
+{% block content %}
+<tr>
+    <td align="center" style="padding:7px 0"><span
+            style="color:#555454;font-family:Open-sans,sans-serif;font-size:small"> <span
+            style="font-weight:500;font-size:28px;text-transform:uppercase;line-height:33px">{% trans 'Dobrý den' %},</span><br> <span
+            style="font-weight:500;font-size:16px;text-transform:uppercase;line-height:25px">{% trans 'na Escapemanii byl pokus o zaplacení objednávek' %}.</span> </span>
+    </td>
+</tr>
+<tr>
+    <td style="padding:0!important">&nbsp;</td>
+</tr>
+
+<tr>
+    <td style="padding:7px 0">
+        <table bgcolor="#ffffff" style="width:100%;border-collapse:collapse">
+            <tbody>
+            <tr>
+                <th colspan="2" style="border:1px solid #D6D4D4;background-color:#fbfbfb;color:#333;font-family:Arial;font-size:13px;padding:10px"
+                    bgcolor="#f8f8f8">{% trans 'Variabilní symbol' %}
+                </th>
+                <th style="border:1px solid #D6D4D4;background-color:#fbfbfb;color:#333;font-family:Arial;font-size:13px;padding:10px"
+                    bgcolor="#f8f8f8">{% trans 'Číslo objednávky' %}
+                </th>
+                <th style="border:1px solid #D6D4D4;background-color:#fbfbfb;color:#333;font-family:Arial;font-size:13px;padding:10px"
+                    bgcolor="#f8f8f8">{% trans 'Jméno' %}
+                </th>
+                <th style="border:1px solid #D6D4D4;background-color:#fbfbfb;color:#333;font-family:Arial;font-size:13px;padding:10px"
+                    bgcolor="#f8f8f8">{% trans 'Zaplatil' %}
+                </th>
+                <th style="border:1px solid #D6D4D4;background-color:#fbfbfb;color:#333;font-family:Arial;font-size:13px;padding:10px"
+                    bgcolor="#f8f8f8">{% trans 'Mělo být zaplaceno' %}
+                </th>
+                <th style="border:1px solid #D6D4D4;background-color:#fbfbfb;color:#333;font-family:Arial;font-size:13px;padding:10px"
+                    bgcolor="#f8f8f8">{% trans 'Odkaz na objednávku' %}
+                </th>
+            </tr>
+            <tr>
+                <td style="border:1px solid #D6D4D4;text-align:center;color:#777;padding:7px 0"
+                    colspan="5">&nbsp;&nbsp;
+                </td>
+            </tr>
+            {% for order in orders %}
+            <tr>
+                <td colspan="2" style="border:1px solid #D6D4D4">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td width="10">&nbsp;</td>
+                            <td>
+                                <font size="2" face="Open-sans, sans-serif" color="#555454">
+                                <strong>{{ order.variable_symbol }}</strong>
+                                </font>
+                            </td>
+                            <td width="10">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td style="border:1px solid #D6D4D4">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td width="10">&nbsp;</td>
+                            <td align="right">
+                                <font size="2" face="Open-sans, sans-serif" color="#555454"> {{ order.id }}</font>
+                            </td>
+                            <td width="10">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td style="border:1px solid #D6D4D4">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td width="10">&nbsp;</td>
+                            <td align="right">
+                                <font size="2" face="Open-sans, sans-serif" color="#555454"> {{ order.first_name|default_if_none:"" }} {{ order.last_name|default_if_none:"" }}</font>
+                            </td>
+                            <td width="10">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td style="border:1px solid #D6D4D4">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td width="10">&nbsp;</td>
+                            <td align="right">
+                                 <font size="2" face="Open-sans, sans-serif" color="#555454"> {{ transactions_dict|get_item:order.variable_symbol }}</font></td>
+                            <td width="10">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td style="border:1px solid #D6D4D4">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td width="10">&nbsp;</td>
+                            <td align="right">
+                                <font size="2" face="Open-sans, sans-serif" color="#555454"> {{ order.get_total_price }}  {{ order.get_currency_display }}</font></td>
+                            <td width="10">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td style="border:1px solid #D6D4D4">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td width="10">&nbsp;</td>
+                            <td align="right">
+                                <font size="2" face="Open-sans, sans-serif" color="#555454"><a href="{{ site_url }}{% url 'admin:orders_order_change' order.id %}" target="_blank">{% trans 'Odkaz Admin' %}</a></font></td>
+                            <td width="10">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td style="border:1px solid #D6D4D4;text-align:center;color:#777;padding:7px 0" colspan="7">&nbsp;&nbsp;
+                  {% trans 'Vypsané objednávky je potřeba ručně zpracovat.' %}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </td>
+</tr>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

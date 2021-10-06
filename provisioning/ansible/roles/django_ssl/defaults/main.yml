@@ -1,0 +1,23 @@
+---
+# defaults file for endevel-django
+project_name:
+git_repo:
+git_branch:
+db_name:
+db_pass:
+db_user:
+settings_file:
+project_domain:
+project_other_domains:  # depreceated because it supports only one domain
+project_other_domains_list:  # USE THIS INSTEAD OF 'project_other_domains" ... this should be a list ['www.endevel.cz']
+# other domains should be specified in certbot_certs if SSL is enabled
+project_secret_key:
+sentry_dsn:
+
+# change ssl nginx conf vhost file to custom template
+nxing_vhost_ssl_template: templates/nginx_vhost_ssl.j2
+
+certbot_certs:
+  - domains:
+    - "{{ project_domain }}"
+    # specify here all other domains for which you want the cert to be generated

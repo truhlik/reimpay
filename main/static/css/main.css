@@ -1,0 +1,13 @@
+.jumbotron h1 {
+  color: #000064; }
+
+body {
+  margin-top: 50px; }
+
+nav.navbar {
+  height: 50px;
+  overflow: hidden; }
+  nav.navbar form.navbar-form .btn-successs {
+    display: inline; }
+
+/*# sourceMappingURL=main.css.map */

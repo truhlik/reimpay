@@ -1,0 +1,10 @@
+
+[program:{{ vue_project_name }}]
+directory = /var/www/{{ vue_project_name }}
+command = /var/www/{{ vue_project_name }}/node_modules/nuxt/bin/nuxt.js start
+user = {{ user }}
+stdout_logfile = /var/www/{{ vue_project_name }}/log/npm_supervisor.log
+redirect_stderr = true
+environment=LANG=cs_CZ.UTF-8,LC_ALL=cs_CZ.UTF-8
+autostart = true
+autorestart = true

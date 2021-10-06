@@ -1,0 +1,21 @@
+$headerHeight: 50px;
+
+.jumbotron h1 {
+    color: rgba(0, 0, 100, 1);
+}
+
+body {
+    margin-top: $headerHeight;
+}
+
+nav.navbar{
+    height: $headerHeight;
+    overflow: hidden;
+
+    form.navbar-form{
+
+        .btn-successs{
+            display: inline;
+        }
+    }
+}

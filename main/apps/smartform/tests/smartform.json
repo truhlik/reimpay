@@ -1,0 +1,41 @@
+{
+    "resultCode": "OK",
+    "errorMessage": null,
+    "id": 0,
+    "suggestions": [
+        {
+            "fieldType": "NUMBER",
+            "values": {
+                "NUMBER": "911",
+                "STREET_AND_NUMBER": "U Stadionu 911",
+                "STREET": "U Stadionu",
+                "CITY": "Kralupy nad Vltavou 1",
+                "MUNICIPALITY": "Kralupy nad Vltavou",
+                "DISTRICT": "Mělník",
+                "REGION": "Středočeský kraj",
+                "ZIP": "27801",
+                "WHOLE_ADDRESS": "U Stadionu 911, 27801 Kralupy nad Vltavou 1"
+            },
+            "flags": {
+                "WHOLE_ADDRESS": "true"
+            }
+        },
+        {
+            "fieldType": "NUMBER",
+            "values": {
+                "NUMBER": "911/1",
+                "STREET_AND_NUMBER": "U Stadionu 911/1",
+                "STREET": "U Stadionu",
+                "CITY": "Beroun 1",
+                "MUNICIPALITY": "Beroun",
+                "DISTRICT": "Beroun",
+                "REGION": "Středočeský kraj",
+                "ZIP": "26601",
+                "WHOLE_ADDRESS": "U Stadionu 911/1, 26601 Beroun 1"
+            },
+            "flags": {
+                "WHOLE_ADDRESS": "true"
+            }
+        }
+    ]
+}

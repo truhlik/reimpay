@@ -1,0 +1,174 @@
+@media print{
+
+@page { margin-top: 2cm }
+
+  .app-header{
+      display:none;
+    }
+  .app-page-title{
+    display:none;
+  }
+  .app-sidebar{
+    display:none;
+  }
+    button, a.btn{
+      display:none;
+    }
+
+  input:placeholder-shown, select:placeholder-shown{
+    display:none;
+  }
+
+  input[type="checkbox"]{
+    box-shadow:none;
+    border:none;
+    opacity:1;
+  }
+
+  .custom-control-label::before{
+    border:none;
+    box-shadow:none;
+    display:none;
+  }
+
+    div.col-md-12{
+        display:flex;
+        height:1cm;
+        align-items:center;
+            h2{
+              padding:0px !important;
+              margin:0px !important;
+              font-size:0.5cm;
+              float:left;
+              vertical-align:middle;
+              font-weight:600;
+            }
+      }
+  form#employeeForm{
+    margin-top:-80px;
+
+    button, a.btn{
+      display:none;
+    }
+
+    div.row{
+      width:50%;
+      float:left;
+      padding-left:20px;
+    }
+
+
+    div.form-row{
+      display:flex;
+      justify-content:flex-start;
+      align-items:center;
+      padding:0px;
+      text-align: center;
+      page-break-inside: avoid;
+      page-break-after: always;
+      page-break-before: always;
+      height:0.9cm;
+      margin:0px !important;
+      font-size:0.25cm;
+
+      label{
+        width:30%;
+        text-align: left;
+        page-break-inside: avoid;
+        line-height:1;
+        font-weight:600;
+      }
+      div.col{
+        width:70%;
+        page-break-inside: avoid;
+        height:28px;
+
+        input, select{
+          height:25px;
+          border:none;
+          font-size: 0.3cm;
+          padding:0px;
+          box-shadow:none;
+        }
+      }
+
+
+    }
+  }
+
+  svg, img#__lpform_lastName_icon{
+    display:none;
+  }
+  #history-employments{
+    display:none;
+  }
+}
+
+
+/*
+@media print{
+
+  @page{
+    padding-bottom:2cm;
+  }
+
+  .app-header{
+      display:none;
+    }
+  .app-page-title{
+    display:none;
+  }
+  .app-sidebar{
+    display:none;
+  }
+    button, a.btn{
+      display:none;
+    }
+
+    h2{
+      margin:0px !important;
+      font-size: 20px;
+      position:absolute;
+      display:none;
+    }
+
+    div{
+        page-break-inside: avoid;
+    }
+
+  form#employeeForm{
+
+    button, a.btn{
+      display:none;
+    }
+
+
+    div{
+      padding:0px !important;
+      margin:0px;
+      width:300px;
+      text-align: left;
+      border:none;
+      float:left;
+      display:inline-block;
+    }
+
+    label{
+      text-align: left;
+      font-weight:600;
+      padding:0px;
+      text-decoration: underline;
+    }
+
+    input, select{
+      border:none;
+      margin:0px;
+      padding:0px;
+    }
+
+    .custom-checkbox{
+      margin-left:30px;
+    }
+  }
+}
+*/

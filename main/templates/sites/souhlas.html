@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+</head>
+<style>
+ table, td, th {
+  border: 1px solid black;
+}
+  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+  td {
+  height: 30px;
+    padding-left: 10px;
+}
+</style>
+<body style="margin: 0">
+<div style="padding-left: 80px; padding-right: 80px">
+  <div style="text-align: center; margin-top: 20px">
+    <span style="font-size: 20px; font-weight: 600">Souhlas se zpracováním osobních údajů účastníka klinického hodnocení za účelem výplaty finančních náhrad</span>
+  </div>
+  <div style="margin-top: 20px">
+    <table>
+      <tr>
+        <td style="background-color: gray; width: 33%"><strong>Název zadavatele:</strong></td>
+        <td><strong>{{ sponsor_name }}</strong></td>
+      </tr>
+      <tr>
+        <td style="background-color: gray;"><strong>Číslo protokolu:</strong></td>
+        <td><strong>{{ study.number }}</strong></td>
+      </tr>
+      <tr>
+        <td style="background-color: gray;"><strong>Číslo účastníka ve studii</strong></td>
+        <td><strong></strong></td>
+      </tr>
+    </table>
+  </div>
+  <div style="margin-top: 20px">
+    <span>Vážená paní, vážený pane,</span><br>
+    <p>jako účastník výše specifikovaného klinického hodnocení léčivých přípravků máte právo na
+      proplacení pacientských náhrad souvisejících s účastí v klinickém hodnocení.
+      Pacientské náhrady budou v tomto klinickém hodnocení účastníkům propláceny prostřednictvím portálu
+      ReimPay, provozovaného společností ReimPay, s.r.o., IČO: 08956189, se sídlem
+      Pod Harfou 994/21, 190 00 Praha 9 - Vysočany, zapsanou v obchodním rejstříku vedeném
+      Městským soudem v Praze, oddíl C, vložka 328186, kontaktní e-mail: info@reimpay.com
+      (dále jen “Společnost“). {% if cro %}Zadavatel tohoto klinického hodnocení pověřil smluvní výzkumnou organizaci
+      (dále též jen „CRO“), aby se Společností za tímto účelem uzavřela příslušnou smlouvu.
+        {% else %}Zadavatel tohoto klinického hodnocení se Společností za tímto účelem uzavřel příslušnou smlouvu.
+        {% endif %}</p>
+    <p>Aby mohla Společnost za zadavatele zajistit úhradu Vašich pacientských náhrad,
+      které Vám za návštěvy v rámci klinického hodnocení přísluší, potřebuje,
+      abyste prostřednictvím tohoto formuláře sdělil(a) údaje dle formy výplaty pacientských náhrad,
+      kterou zvolíte:</p>
+  </div>
+  <div style="padding-left: 30px">{% if study.bank_transfer %}
+    <span>- Platba převodem na bankovní účet:</span>
+    <ul>
+      <li>jméno a příjmení</li>
+      <li>číslo bankovního účtu</li>
+    </ul>{% endif %}{% if study.post_office_cash %}
+    <span>- Platba poštovní poukázkou:</span>
+    <ul>
+      <li>jméno a příjmení</li>
+      <li>korespondenční adresa</li>
+    </ul>{% endif %}{% if study.sazka_transfer %}
+    <span>- Platba prostřednictvím terminálu Sazka</span>
+    <ul>
+      <li>jméno a příjmení</li>
+      <li>telefonní číslo</li>
+    </ul>{% endif %}
+  </div>
+  <p>Shora uvedené údaje (dle zvolené formy výplaty) budou následně vloženy do portálu ReimPay, provozovaného Společností.
+    Správcem Vašich osobních údajů je zadavatel, který pověřil Společnost{% if cro %} prostřednictvím CRO{% endif %}
+    na základě uzavřené smlouvy
+    zpracováním Vašich osobních údajů k účelu uvedenému výše. V případě jakýchkoliv nejasností můžete kontaktovat Společnost,
+    jakožto pověřeného zpracovatele, prostřednictvím shora uvedených kontaktních údajů. Vaše osobní údaje ve shora uvedeném
+    rozsahu budou zpracovávány rovněž ze strany personálu studijního centra, a to výhradně za účelem jejich zadání do portálu ReimPay,
+    provozovaného Společností. Vaše osobní údaje budou zpracovávány pouze po dobu trvání Vaší účasti v tomto klinickém hodnocení,
+    a kromě své banky (a v případě, že jako platební metodu zvolíte poštovní poukázku, pak též kromě držitele poštovní licence)
+    je Společnost nepředá žádné třetí osobě, a to ani zadavateli.</p>
+
+  <p>Při zpracování osobních údajů ze strany Společnosti nedochází k automatizovanému rozhodování ani profilování.
+    K zajištění vysoké úrovně zabezpečení a ochrany Vašich osobních údajů přijala Společnost potřebná technicko organizační opatření.</p>
+
+
+  <div style="margin-top: 20px">
+    <span style="font-size: 15px; font-weight: 800">JAKÁ MÁTE PRÁVA VE VZTAHU KE SVÝM OSOBNÍM ÚDAJŮM?</span>
+  </div>
+  <ol>
+    <li>Za podmínek stanovených v obecně závazných právních předpisech máte právo na přístup ke svým osobním údajům.</li>
+    <li>Máte právo na opravu nepřesných osobních údajů. Zjistíte-li, že Vaše osobní údaje, které správce zpracovává, neodpovídají skutečnosti (např. zkomolenina jména), máte právo žádat, aby správce prostřednictvím Společnosti, jako pověřeného zpracovatele, příslušné osobní údaje opravil nebo doplnil.</li>
+    <li>V určitých případech máte rovněž právo na výmaz, a to jestliže:
+      <ol type="a">
+        <li>Vaše osobní údaje již nejsou potřebné pro účely, pro které byly shromážděny nebo jinak zpracovávány;</li>
+        <li>odvoláte souhlas, na jehož základě byly příslušné osobní údaje ze strany Společnosti zpracovávány;</li>
+        <li>vznesete námitky proti zpracování svých osobních údajů v případech stanovených příslušnými obecně závaznými právními předpisy a neexistují žádné převažující oprávněné důvody pro zpracování ze strany Společnosti;</li>
+        <li>došlo k protiprávnímu zpracovávání Vašich osobních údajů, nebo</li>
+        <li>musí být Vaše osobní údaje vymazány ke splnění právní povinnosti, která se na Společnost vztahuje.</li>
+      </ol>
+    </li>
+    <li>Máte právo na omezení zpracování, a to za předpokladu, že:
+    <ol type="a">
+      <li>popíráte přesnost svých osobních údajů na dobu potřebnou k tomu, aby správce mohl přesnost Vašich osobních údajů ověřit;</li>
+      <li>došlo k protiprávnímu zpracovávání Vašich osobních údajů a namísto výmazu požadujete omezení zpracování;</li>
+      <li>došlo z Vaší strany ke vznesení námitky proti zpracování a v dalších případech stanovených příslušnými obecně závaznými právními předpisy.</li>
+    </ol>
+    </li>
+    <li>Máte dále právo vznést námitku proti zpracování osobních údajů, které je založeno na oprávněném zájmu správce, a právo na přenositelnost svých osobních údajů v případech stanovených obecně závaznými právními předpisy. Máte rovněž právo podat stížnost u dozorového úřadu, kterým je v České republice Úřad pro ochranu osobních údajů (www.uoou.cz), pokud se domníváte, že ke zpracování Vašich osobních údajů dochází v rozporu s právními předpisy. V případě jakýchkoliv pochybností nebo dotazů ohledně zpracování svých osobních údajů se můžete kdykoliv obrátit na Společnost, jako k tomu pověřeného zpracovatele, prostřednictvím shora uvedených kontaktů.</li>
+    <li>Požadované osobní údaje jsou třeba k plnění smlouvy a zajišťování plateb pacientských náhrad. Samozřejmě nemáte povinnost své shora uvedené osobní údaje poskytnout, bez poskytnutí potřebných osobních údajů však nebude možné Vám pacientské náhrady, na které máte nárok, vyplatit.</li>
+  </ol>
+
+   <div style="margin-top: 20px">
+    <span style="font-size: 15px; font-weight: 800">PROHLÁŠENÍ</span>
+  </div>
+  <p>Přečetl(a) jsem si výše uvedené, seznámil(a) jsem se s informací ohledně zpracování svých osobních údajů a udílím tímto svůj výslovný souhlas se zpracováním svých osobních údajů za výše popsaným účelem a za specifikovaných podmínek.
+    <br><span>Tento formulář zůstane uložen ve studijním centru.</span>
+  </p>
+
+  <p>Volba platební metody:</p>{% if study.bank_transfer %}
+  <ul>
+<li>převod na bankovní účet</li>
+</ul>
+<table width="564">
+<tbody>
+<tr>
+<td width="222" style="background-color: gray;">
+<p><strong>Celé jméno účastníka:</strong></p>
+</td>
+<td colspan="21" width="342">
+</td>
+</tr>
+<tr>
+<td width="222" style="background-color: gray;">
+<p><strong>Číslo bankovního účtu:</strong></p>
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="20">
+<p><strong>-</strong></p>
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="23">
+<p><strong>/</strong></p>
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+<td width="16">
+</td>
+</tr>
+</tbody>
+</table>
+<br>{% endif %}{% if study.post_office_cash %}
+<ul>
+<li>poštovní poukázka</li>
+</ul>
+<table width="564">
+<tbody>
+<tr>
+<td width="222" style="background-color: gray;">
+<p><strong>Celé jméno účastníka:</strong></p>
+</td>
+<td width="342">
+</td>
+</tr>
+<tr>
+<td width="222" style="background-color: gray;">
+<p><strong>Adresa účastníka:</strong></p>
+</td>
+<td width="342">
+</td>
+</tr>
+</tbody>
+</table>
+  <br/>{% endif %}{% if study.sazka_transfer %}
+<ul>
+<li>výplata na terminálu Sazka</li>
+</ul>
+<table width="564">
+<tbody>
+<tr>
+<td width="222" style="background-color: gray;">
+<p><strong>Celé jméno účastníka:</strong></p>
+</td>
+<td colspan="13" width="342">
+</td>
+</tr>
+<tr>
+<td width="222" style="background-color: gray;">
+<p><strong>Telefonní číslo:</strong></p>
+</td>
+<td width="26">
+<p><strong>+</strong></p>
+</td>
+<td width="26">
+<p><strong>4</strong></p>
+</td>
+<td width="26">
+<p><strong>2</strong></p>
+</td>
+<td width="26">
+<p><strong>0</strong></p>
+</td>
+<td width="26">
+</td>
+<td width="26">
+</td>
+<td width="26">
+</td>
+<td width="26">
+</td>
+<td width="26">
+</td>
+<td width="26">
+</td>
+<td width="26">
+</td>
+<td width="26">
+</td>
+<td width="27">
+<p><strong></strong></p>
+</td>
+</tr>
+</tbody>
+</table>{% endif %}
+
+  <p><strong>Datum:</strong>_________________ <strong style="padding-left: 20px">Podpis účastníka</strong>:_____________________</p>
+</div>
+</body>
+</html>

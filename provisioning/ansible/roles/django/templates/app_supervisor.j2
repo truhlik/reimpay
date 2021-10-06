@@ -1,0 +1,9 @@
+[program:{{ project_name }}]
+directory = /var/www/{{ project_name }}
+command = /var/www/{{ project_name }}/.venv/bin/gunicorn {{ django_project_name }}.wsgi --env DJANGO_SETTINGS_MODULE={{ settings_path }} -b unix:/var/www/{{ project_name }}/app.sock
+user = {{ user | default(ansible_ssh_user) }}
+stdout_logfile = /var/www/{{ project_name }}/log/gunicorn_supervisor.log
+redirect_stderr = true
+environment=LANG=cs_CZ.UTF-8,LC_ALL=cs_CZ.UTF-8
+autostart = true
+autorestart = true

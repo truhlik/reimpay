@@ -1,0 +1,22 @@
+project_name: reimpay
+git_repo: git@gitlab.com:endevel/clients/reimpay.git
+sentry_dsn: https://1a1f91c0cb60480cb0bedf66b9d2249f@sentry.endevel.cz/47
+
+db_name: reimpay
+db_user: reimpay
+db_pass: "{{ vault_db_pass }}"
+db_custom_ext: ['unaccent']
+
+project_secret_key: "{{ vault_project_secret_key }}"
+python_path: /opt/python/bin/python3  # kvůli Django3.0 potřebujeme python3.7
+
+vue_frontend: true
+vue_project_name: reimpay_front
+vue_frontend_static: true
+vue_git_same_repo: true
+vue_project_relative_path: "reimpay/front/src"
+
+celery_enabled: false
+
+nxing_vhost_template: "{{ playbook_dir }}/templates/nginx_vhost.j2"
+nxing_vhost_ssl_template: "{{ playbook_dir }}/templates/nginx_vhost_ssl.j2"

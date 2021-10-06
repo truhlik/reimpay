@@ -1,0 +1,14 @@
+- hosts: "{{ deploy_hosts|default('all') }}"
+  roles:
+    - role: django
+    - role: django_ssl
+      become: yes
+      when: redirect_http
+
+  tasks:
+    - name: Cron for django-cron
+      cron:
+        name: "{{ project_name }}-ansible-cron"
+        minute: "5"
+        hour: "*"
+        job: "/var/www/{{ project_name }}/.venv/bin/python /var/www/{{ project_name }}/manage.py runcrons --settings=main.settings.{{ settings_file }}"

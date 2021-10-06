@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body, p, div, ul li {
+        font-size: 12pt;
+    }
+
+    </style>
+</head>
+<body style="margin: 0">
+
+<div style="text-align: center; margin-top: 40px">
+    <img src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{% static "img/logo_2.png" %}" height="50" width="250">
+</div>
+<div style="text-align: center">
+    <h3><strong>Výplata náhrad pacientům klinického hodnocení</strong></h3>
+    <h1 style="margin-top: -15px"><strong>Instrukce pro zdravotnické zařízení</strong></h1>
+</div>
+<div style="padding-left: 80px; padding-right: 80px">
+    <p>Ceníme si Vašeho času a proto neustále pracujeme na odstraňování administrativní
+        zátěže našich smluvních zdravotnických zařízení. <strong>ReimPay</strong> je systém pro automatické
+        zpracování a vyplacení náhrad pacientům klinických studií. Práci s hotovostí, účetnictvím a konečným
+        vyúčtovávání nahrazuje jedním úkonem - elektronickým potvrzení návštěvy.</p>
+    <div style="float: right; font-size: 20px; justify-content: center;display: flex; width: 100%">
+        <div style="padding-left: 100px">
+            <ul style="list-style-type: none; float: left">
+                <li>Studie</li>
+                <li>Zdravotnické zařízení</li>
+                <li>Aktuální frekvence výplat</li>
+                <li style="margin-top: 30px">PIN</li>
+            </ul>
+            <ul style="list-style-type: none; float: left">
+                <li><strong>{{ study.identifier }}</strong></li>
+                <li><strong>{{ site.title }}</strong></li>
+                <li><strong>{{ study.pay_frequency }}</strong></li>
+                <li style="margin-top: 20px"><strong><span style="font-size: 30px; background-color: black; color: white">{{ site.pin }}</span></strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; width: 100%; border-bottom: 4px solid #37A794">
+        <p style="padding-bottom: 15px"><span style="color: #37A794; font-size: 18px">PIN si bezpečně uložte a nesdělujte neoprávněným osobám</span>
+        </p>
+    </div>
+
+
+    <div>
+        <h2>Založení pacienta</h2>
+        <p>Novému pacientovi nechte vyplnit přiložený výplatní formulář, který je již součástí
+            vstupní dokumentace.
+            V něm si vybírá z dostupných výplatních metod studie a uvádí potřebné výplatní údaje.
+            Zvolenou metodou obdrží finanční náhradu ve výplatním termínu, který určil administrátor studie.</p>
+    </div>
+    <div style="height: 700px">
+        <div style="width: 40%; padding-right:20px; float: left">
+            <h2>Založení pacienta</h2>
+            <ol>
+                <li>Otevřete stránky <a href="https://www.reimpay.com/">www.reimpay.com</a></li>
+                <li>Vložte randomizační číslo pacienta</li>
+                <li>Vložte svůj PIN (uvedený výše)</li>
+                <li>Uveďte datum návštěvy<br>(maximálně 5 dní zpětně)</li>
+                <li>Zvolte vhodné položky náhrady</li>
+                <li>Potvrďte návštěvu</li>
+            </ol>
+            <h2>Terminace pacienta</h2>
+            <ol start="7">
+                <li>V případě poslední návštěvy přepněte typ návštěvy na DISCONTIUNAL</li>
+            </ol>
+            <h2>Neplánovaná návštěva</h2>
+            <ol start="8">
+                <li>V případě neplánované návštěvy přepněte typ návštěvy UNSCHEDULED</li>
+            </ol>
+            <h2>Změna platebních údajů</h2>
+            <ol start="9">
+                <li>V případě, že pacient požaduje změnu způsobu výplaty náhrad,
+                    nechte pacienta vyplnit a podepsat nový výplatní formulář. Klikem na tlačítko uvědomíte CRA
+                    studie.
+                </li>
+            </ol>
+        </div>
+        <div style="width: 50%; float: left">
+            <div style="display: flex; justify-content: center">
+                <img src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{% static "img/tutorial.png" %}" height="700" width="450">
+            </div>
+        </div>
+    </div>
+
+</div>
+{#<div style="background-color: #37A794; height: 60px; width: 100%; text-align: center; display: flex; justify-content: center">#}
+{#    <span><a href="https://www.reimpay.com/" style="margin: 0px auto; text-decoration: none; font-size: 12pt; font-weight: 500; color: white">www.ReimPay.com</a> </span>#}
+{#</div>#}
+
+</body>
+</html>

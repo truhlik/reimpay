@@ -1,0 +1,8 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+    Přijat požadavek od: {{ obj.email }}<br/>
+    Předmět: {{ obj.subject }}<br/>
+    Text: {{ obj.text }}<br/>
+    URL: {{ site_url }}{% url "admin:ticket_ticket_changelist" %}<br/>
+{% endblock %}

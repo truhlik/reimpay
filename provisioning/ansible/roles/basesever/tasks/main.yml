@@ -1,0 +1,59 @@
+---
+# tasks file for endevel-server
+
+- name: set hostname for server
+  hostname:
+    name: "{{ server_hostname }}"
+
+- name: Set authorized key, removing all the authorized keys already set
+  authorized_key:
+    user: "{{ user }}"
+    key: "{{ ssh_users|join('\n') }}"
+    state: present
+    exclusive: yes
+  tags:
+    - fast
+
+- name: Install the packages
+  apt:
+    name: "{{ packages }}"
+
+# nevím jestli tohle je potřeba, tak zatím zakomentovávám a uvidíme
+#- name: fix permissions on web root dir
+#  file: dest=/var/www/ owner="{{ user }}" group=www-data mode=u=rwX,g=rwX,o=rX recurse=yes
+
+- name: fix permissions on supervisor conf files
+  file: dest=/etc/supervisor/conf.d/ owner=root group="{{ user }}" mode=u=rwX,g=rwX,o=rX recurse=yes
+
+- name: Creates backup directory
+  file:
+    path: '/mnt/backup/'
+    state: directory
+    owner: '{{ user }}'
+    group: '{{ user }}'
+
+- name: Create backup script file
+  template:
+    src: templates/backup.sh.j2
+    dest: '/home/{{ user }}/backup.sh'
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0774
+
+- name: Ensure EMAIL variable exists in crontab
+  cronvar:
+    name: EMAIL
+    value: '{{ cron_email }}'
+
+- name: Add cron to run backup script
+  cron:
+    name: "server backup script"
+    minute: "0"
+    hour: "2"
+    job: "/home/{{ user }}/backup.sh"
+    user: "{{ user }}"
+
+- name: add nginx conf for SSL vhost (takes very long)
+  template:
+    src: templates/ssl_vhost.j2
+    dest: /etc/nginx/snippets/ssl.conf

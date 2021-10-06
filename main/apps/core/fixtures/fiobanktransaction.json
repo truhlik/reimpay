@@ -1,0 +1,98 @@
+[
+    {
+        "model": "fiobanka.fiobanktransactions",
+        "pk": 22,
+        "fields": {
+            "transaction_id": "23009811899",
+            "date": "2020-04-16",
+            "amount": -1300.5,
+            "currency": "CZK",
+            "account_number": "2501264820",
+            "account_name": null,
+            "bank_code": "2010",
+            "bank_name": "Fio banka, a.s.",
+            "constant_symbol": "0000",
+            "variable_symbol": "0000203001",
+            "specific_symbol": "0000000000",
+            "user_identification": null,
+            "type": "Platba převodem uvnitř banky",
+            "comment": "Escape mania",
+            "instruction_id": "27095285817",
+            "bic": null,
+            "recipient_message": "Escape mania",
+            "processed_on": null
+        }
+    },
+    {
+        "model": "fiobanka.fiobanktransactions",
+        "pk": 23,
+        "fields": {
+            "transaction_id": "23011630199",
+            "date": "2020-04-20",
+            "amount": -231.73,
+            "currency": "CZK",
+            "account_number": null,
+            "account_name": null,
+            "bank_code": null,
+            "bank_name": null,
+            "constant_symbol": null,
+            "variable_symbol": "2605",
+            "specific_symbol": null,
+            "user_identification": "Nákup: BALSAMIQ TRID1193835,  PO Box 1138, 4153673531, 95812, USA, dne 19.4.2020, částka  9.00 USD",
+            "type": "Platba kartou",
+            "comment": "Nákup: BALSAMIQ TRID1193835,  PO Box 1138, 4153673531, 95812, USA, dne 19.4.2020, částka  9.00 USD",
+            "instruction_id": "27103005261",
+            "bic": null,
+            "recipient_message": "Nákup: BALSAMIQ TRID1193835,  PO Box 1138, 4153673531, 95812, USA, dne 19.4.2020, částka  9.00 USD",
+            "processed_on": null
+        }
+    },
+    {
+        "model": "fiobanka.fiobanktransactions",
+        "pk": 24,
+        "fields": {
+            "transaction_id": "23013520309",
+            "date": "2020-04-21",
+            "amount": 2501.87,
+            "currency": "CZK",
+            "account_number": "59942",
+            "account_name": "Up Česká republika s",
+            "bank_code": "0800",
+            "bank_name": "Česká spořitelna, a.s.",
+            "constant_symbol": "0308",
+            "variable_symbol": "129092165",
+            "specific_symbol": "81429",
+            "user_identification": "Up Česká republika s",
+            "type": "Bezhotovostní příjem",
+            "comment": "Up Česká republika s",
+            "instruction_id": "27111097935",
+            "bic": null,
+            "recipient_message": null,
+            "processed_on": null
+        }
+    },
+    {
+        "model": "fiobanka.fiobanktransactions",
+        "pk": 25,
+        "fields": {
+            "transaction_id": "23015639737",
+            "date": "2020-04-24",
+            "amount": 1138.13,
+            "currency": "CZK",
+            "account_number": "4631352",
+            "account_name": "ComGate Payments, a.",
+            "bank_code": "0800",
+            "bank_name": "Česká spořitelna, a.s.",
+            "constant_symbol": "0000",
+            "variable_symbol": "129092165",
+            "specific_symbol": "0",
+            "user_identification": "ComGate Payments, a.",
+            "type": "Bezhotovostní příjem",
+            "comment": "ComGate Payments, a.",
+            "instruction_id": "27120100272",
+            "bic": null,
+            "recipient_message": null,
+            "processed_on": null
+        }
+    }
+]

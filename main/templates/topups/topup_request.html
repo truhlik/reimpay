@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="cz">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+    <meta charset="utf-8">
+    <title>TOPUP</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0cm;
+            padding-bottom: 0.5cm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+        }
+
+        .logo {
+            position: relative;
+            left: 40px;
+            top: 100px;
+
+            width: 225px;
+            height: 40px;
+        }
+
+        .role {
+
+            padding-left: 40px;
+        }
+
+        .address {
+            list-style-type: none;
+        }
+
+        .address li {
+
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            margin: 0 0 6px 0;
+        }
+
+        .price {
+            margin: 2px 0 2px 0;
+            columns: 2;
+            column-gap: 250px;
+            list-style-type: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .payment {
+
+            columns: 2;
+            column-gap: 330px;
+            list-style-type: none;
+        }
+
+        .payment li {
+            margin: 0 0 3px 0;
+        }
+
+        .qrcode {
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            left: 70px;
+            bottom: 40px;
+        }
+
+        .created_by {
+            position: absolute;
+            column-gap: 120px;
+            top: 420px;
+            columns: 2;
+            list-style-type: none;
+        }
+
+        .created_by li {
+            margin: 0 0 3px 0;
+        }
+
+        .customer {
+            position: absolute;
+            top: 260px;
+        }
+
+        .customer_title {
+            position: absolute;
+            top: 220px;
+        }
+
+        .rank {
+            columns: 2;
+            list-style-type: none;
+            position: absolute;
+            top: 150px;
+            column-gap: 155px;
+            font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .help_text {
+            position: absolute;
+            top: 80px;
+            padding: 0 0 0 40px;
+        }
+
+        hr {
+            border-top: 2px solid #36A693;
+        }
+
+        .sub_title {
+            position: absolute;
+            top: 44px;
+        }
+
+        .price_block {
+            position: absolute;
+            top: 200px;
+        }
+
+        .column-1 {
+            position: absolute;
+            top: 220px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="row">
+    <div class="column">
+        <div id="logo">
+            <img src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{% static "img/logo.png" %}" class="logo">
+        </div>
+        <div class="column-1">
+            <h3 class="role">Dodavatel</h3>
+            <ul class="address">
+                <li>ReimPay s.r.o</li>
+                <li>Pod Harfou 994/21</li>
+                <li>190 00 Praha - Vysocany</li>
+            </ul>
+
+            <div class="line"></div>
+
+            <hr/>
+
+            <ul class="price">
+                <li>Požadovaná suma</li>
+                <li>{{ object.amount }} CZK</li>
+            </ul>
+
+            <hr/>
+            <ul class="payment">
+                <li>Bankovní účet: {{ config.BANK_ACCOUNT_CREDIT }}</li>
+                <li>Variabliní symbol: {{ object.study.variable_symbol }}</li>
+                <li>Způsob platby: Převodem</li>
+            </ul>
+        </div>
+
+        <!-- <img src="qrcode.png" class="qrcode">-->
+    </div>
+    <div class="column">
+        <div class="help_text">
+            <hr/>
+            <h2>TOPUP CREDIT REQUEST</h2>
+            <div class="sub_title">
+                <p>Doplnění zálohovaného účtu studie</p>
+            </div>
+        </div>
+        <ul class="rank">
+            <li></li>
+            <li>Studie</li>
+            <li>#{{ object.study.number }}</li>
+        </ul>
+
+        <h3 class="role customer_title">Odběratel</h3>
+        <ul class="address customer">
+            <li>{{ object.study.company.name }}</li>
+            <li>{{ object.study.company.street }}{{ object.study.company.street_number }}</li>
+            <li>{{ object.study.company.zip }} {{ object.study.company.city }}</li>
+        </ul>
+
+        <ul class="created_by">
+            <li>Datum vystavení - {{ object.created_at }}</li>
+            <li>Vystavil - {{ request.user.full_name }}</li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

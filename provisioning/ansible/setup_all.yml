@@ -1,0 +1,7 @@
+- hosts: "{{ deploy_hosts|default('all') }}"
+  roles:
+    - role: basesever
+      become: yes
+    - role: geerlingguy.nodejs
+    - role: geerlingguy.redis
+      become: yes

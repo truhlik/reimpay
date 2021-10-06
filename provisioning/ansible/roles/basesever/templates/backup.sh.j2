@@ -1,0 +1,18 @@
+TIMESTAMP=$(date +"%F")
+BACKUP_DIR="{{ backup_db_root }}/$TIMESTAMP"
+
+mkdir -p "$BACKUP_DIR"
+
+# dump all databases to separate files
+DBLIST=`sudo -u postgres /usr/bin/psql -U postgres -d postgres -q -t -c "SELECT datname from pg_database WHERE datname NOT LIKE 'template%'"`
+for d in $DBLIST
+do
+     # echo "db = $d";
+     pg_dump -U {{ db_superuser }} -Fc $d > "$BACKUP_DIR/$d.dump"
+done
+
+# delete all files in mysql_dumps older than 7 days (this method should be safer than rm for names with spaces)
+find {{ backup_db_root }} -mindepth 1 -mtime +7 -exec rm -r "{}" \;
+
+# sync content of /var/www without static files and virtualenvs
+rsync -uav -R /var/www/*/media {{ backup_web_root }}
